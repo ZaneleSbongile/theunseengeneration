@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Unseen Generation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========================================== -->
+  <!-- HEADER & NAVIGATION                        -->
+  <!-- ========================================== -->
+  <header>
+    <div class="logo">The Unseen Generation</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Initiatives</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- HERO SLIDESHOW SECTION                     -->
+  <!-- ========================================== -->
+  <section class="hero-slider">
+    <div class="slide active">
+      <img src="https://via.placeholder.com/1200x400/8a4fff/ffffff?text=Slide+1" alt="Slide 1">
+    </div>
+    <div class="slide">
+      <img src="https://via.placeholder.com/1200x400/5e2ca5/ffffff?text=Slide+2" alt="Slide 2">
+    </div>
+    <div class="slide">
+      <img src="https://via.placeholder.com/1200x400/9c6ade/ffffff?text=Slide+3" alt="Slide 3">
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- FOOTER SECTION                             -->
+  <!-- ========================================== -->
+  <footer>
+    <p>&copy; 2026 The Unseen Generation. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function moveSlide(step) {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + step + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

@@ -103,6 +103,7 @@ nav a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures images crop nicely without distorting aspect ratio */
+  object-position: top center; /* Focuses crop alignment on the top of the image to show faces */
 }
 
 /* Navigation Arrows (Previous / Next Buttons) */

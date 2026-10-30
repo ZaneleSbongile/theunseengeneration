@@ -127,7 +127,57 @@ nav a:hover {
 .next { right: 15px; }
 
 /* --------------------------------------------------------------------------
-   4. FOOTER STYLES
+   4. CORE PILLARS STYLES
+   -------------------------------------------------------------------------- */
+.pillars-section {
+  padding: 4rem 5%;
+  text-align: center;
+  background-color: var(--white);
+}
+
+.section-title {
+  color: var(--mauve-dark);
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.pillars-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap; /* Ensures cards wrap cleanly on smaller mobile screens */
+}
+
+.pillar-card {
+  background-color: var(--mauve-light);
+  border: 1px solid var(--mauve);
+  border-radius: 10px;
+  padding: 2rem;
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-5px); /* Gentle hover lift effect */
+  box-shadow: 0 8px 20px rgba(138, 79, 255, 0.15);
+}
+
+.pillar-card h3 {
+  color: var(--mauve-dark);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.pillar-card p {
+  line-height: 1.6;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. FOOTER STYLES
    -------------------------------------------------------------------------- */
 footer {
   background-color: var(--mauve-dark);

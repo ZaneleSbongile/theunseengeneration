@@ -302,7 +302,7 @@ nav a.nav-btn:hover {
   background: linear-gradient(180deg, var(--mauve-light) 0%, var(--white) 100%);
 }
 
-.hero-badge {
+.hero-badge, .section-badge {
   display: inline-block;
   background-color: rgba(138, 79, 255, 0.12);
   color: var(--mauve-dark);
@@ -332,7 +332,7 @@ nav a.nav-btn:hover {
 
 /* Main Story Section */
 .story-section {
-  padding: 3rem 5% 4.5rem;
+  padding: 3rem 5% 4rem;
   background-color: var(--white);
 }
 
@@ -417,6 +417,84 @@ nav a.nav-btn:hover {
   border: 1px dashed var(--mauve);
 }
 
+/* --------------------------------------------------------------------------
+   6. OUR CAUSES STYLES
+   -------------------------------------------------------------------------- */
+.causes-section {
+  padding: 4.5rem 5%;
+  background-color: var(--mauve-soft);
+  text-align: center;
+}
+
+.causes-wrapper {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.section-title-soft {
+  color: var(--mauve-dark);
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.causes-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cause-card {
+  background-color: var(--white);
+  border: 1px solid var(--mauve-light);
+  border-radius: 16px;
+  padding: 2.2rem 2rem;
+  flex: 1;
+  min-width: 300px;
+  max-width: 480px;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(138, 79, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cause-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(138, 79, 255, 0.12);
+}
+
+.cause-card.full-width-cause {
+  max-width: 1000px;
+  border-left: 5px solid var(--mauve);
+}
+
+.cause-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cause-num {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--mauve);
+  background-color: var(--mauve-light);
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+}
+
+.cause-header h3 {
+  color: var(--mauve-dark);
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+.cause-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
 /* Impact Highlights */
 .impact-section-soft {
   padding: 2.5rem 5%;
@@ -452,63 +530,6 @@ nav a.nav-btn:hover {
   color: var(--white);
   font-size: 0.95rem;
   font-weight: 500;
-}
-
-/* Values Grid */
-.values-soft-section {
-  padding: 4.5rem 5%;
-  background-color: var(--mauve-soft);
-  text-align: center;
-}
-
-.section-title-soft {
-  color: var(--mauve-dark);
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
-}
-
-.values-soft-grid {
-  display: flex;
-  gap: 1.8rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 1050px;
-  margin: 0 auto;
-}
-
-.val-card {
-  background-color: var(--white);
-  border: 1px solid var(--mauve-light);
-  border-radius: 14px;
-  padding: 2rem 1.6rem;
-  flex: 1;
-  min-width: 220px;
-  max-width: 245px;
-  text-align: left;
-  box-shadow: 0 6px 18px rgba(138, 79, 255, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.val-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(138, 79, 255, 0.12);
-}
-
-.val-icon {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.val-card h3 {
-  color: var(--mauve-dark);
-  font-size: 1.2rem;
-  margin-bottom: 0.6rem;
-}
-
-.val-card p {
-  font-size: 0.93rem;
-  line-height: 1.6;
-  color: var(--text-muted);
 }
 
 /* Mission & Vision Section */
@@ -564,7 +585,7 @@ nav a.nav-btn:hover {
 }
 
 /* --------------------------------------------------------------------------
-   6. FOOTER STYLES
+   7. FOOTER STYLES
    -------------------------------------------------------------------------- */
 footer {
   background-color: var(--mauve-dark);

@@ -35,38 +35,76 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
+  padding: 0.8rem 5%;
   background-color: var(--white);
   border-bottom: 2px solid var(--mauve-light);
+  box-shadow: 0 4px 15px rgba(138, 79, 255, 0.08); /* Subtle mauve drop shadow */
   position: sticky;
   top: 0;
   z-index: 100; /* Keeps navbar above other elements while scrolling */
 }
 
-/* Site Branding / Logo Text */
-.logo {
-  font-size: 1.4rem;
-  font-weight: bold;
+/* Logo Brand Container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: 700;
   color: var(--mauve-dark);
+  letter-spacing: -0.3px;
 }
 
 /* Navigation Menu */
 nav ul {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 1.8rem;
+  align-items: center;
 }
 
 /* Navigation Links */
 nav a {
+  position: relative;
   text-decoration: none;
   color: var(--text);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
   transition: color 0.3s ease;
 }
 
-/* Hover effect for navigation items */
+/* Hover line indicator effect under navigation options */
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--mauve);
+  transition: width 0.3s ease;
+}
+
 nav a:hover {
+  color: var(--mauve);
+}
+
+nav a:hover::after,
+nav a.active-link::after {
+  width: 100%;
+}
+
+nav a.active-link {
   color: var(--mauve);
 }
 

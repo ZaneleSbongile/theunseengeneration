@@ -76,7 +76,7 @@ nav a:hover {
 .hero-slider {
   position: relative;
   max-width: 100%;
-  height: 400px;
+  height: 450px;
   overflow: hidden;
   background-color: var(--mauve-light);
 }
@@ -103,7 +103,57 @@ nav a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures images crop nicely without distorting aspect ratio */
-  object-position: top center; /* Focuses crop alignment on the top of the image to show faces */
+  object-position: top center; /* Focuses crop alignment on top of image to show faces */
+}
+
+/* Dark Mauve Dimming Overlay */
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(35, 12, 60, 0.55); /* Darkened mauve tint to ensure high contrast */
+  z-index: 1;
+}
+
+/* Overlay Text Content Container */
+.slide-content {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+  padding: 0 1rem;
+  max-width: 700px;
+}
+
+.slide-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.slide-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Slide Call to Action Button */
+.slide-btn {
+  display: inline-block;
+  padding: 0.75rem 1.8rem;
+  background-color: var(--mauve);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.slide-btn:hover {
+  background-color: var(--mauve-dark);
+  transform: translateY(-2px);
 }
 
 /* Navigation Arrows (Previous / Next Buttons) */
@@ -117,6 +167,7 @@ nav a:hover {
   padding: 10px 15px;
   cursor: pointer;
   border-radius: 50%;
+  z-index: 3; /* Placed above text and overlay */
   transition: background 0.3s ease;
 }
 

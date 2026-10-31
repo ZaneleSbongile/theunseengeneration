@@ -36,15 +36,14 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 5%;
-  /* Feature 1: Glassmorphism effect with semi-transparent background and blur */
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 2px solid var(--mauve-light);
-  box-shadow: 0 4px 15px rgba(138, 79, 255, 0.08); /* Subtle mauve drop shadow */
+  box-shadow: 0 4px 15px rgba(138, 79, 255, 0.08);
   position: sticky;
   top: 0;
-  z-index: 100; /* Keeps navbar above other elements while scrolling */
+  z-index: 100;
 }
 
 /* Logo Brand Container */
@@ -52,7 +51,6 @@ header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  /* Feature 4: Gentle hover lift on brand logo */
   transition: transform 0.3s ease;
 }
 
@@ -62,11 +60,11 @@ header {
 
 /* Strict Sizing for Logo Image */
 .site-logo {
-  height: 40px;          /* Restricts max height to fit neatly in navbar */
+  height: 40px;
   max-height: 40px;
-  width: auto;           /* Maintains image aspect ratio without distortion */
-  max-width: 150px;      /* Prevents oversized width expansion */
-  object-fit: contain;   /* Ensures entire logo fits inside frame */
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
   display: block;
 }
 
@@ -93,12 +91,10 @@ nav a {
   font-weight: 600;
   font-size: 0.95rem;
   padding: 0.3rem 0;
-  /* Feature 4: Gentle lift on hover */
   transition: color 0.3s ease, transform 0.2s ease;
   display: inline-block;
 }
 
-/* Feature 2: Animated line expanding outward from the center */
 nav a:not(.nav-btn)::after {
   content: '';
   position: absolute;
@@ -125,7 +121,7 @@ nav a.active-link {
   color: var(--mauve);
 }
 
-/* Feature 3: Highlighted Pill CTA Button for Contact */
+/* Highlighted Pill CTA Button for Contact */
 nav a.nav-btn {
   background-color: var(--mauve);
   color: var(--white);
@@ -142,7 +138,7 @@ nav a.nav-btn:hover {
 }
 
 /* --------------------------------------------------------------------------
-   3. HERO SLIDESHOW STYLES
+   3. HERO SLIDESHOW STYLES (HOME PAGE)
    -------------------------------------------------------------------------- */
 .hero-slider {
   position: relative;
@@ -152,43 +148,38 @@ nav a.nav-btn:hover {
   background-color: var(--mauve-light);
 }
 
-/* Slide Container: Hidden by default */
 .slide {
   position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 0.8s ease-in-out; /* Smooth transition when changing slides */
+  transition: opacity 0.8s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Active Slide: Displayed with full opacity */
 .slide.active {
   opacity: 1;
 }
 
-/* Slide Image Layout */
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures images crop nicely without distorting aspect ratio */
-  object-position: top center; /* Focuses crop alignment on top of image to show faces */
+  object-fit: cover;
+  object-position: top center;
 }
 
-/* Dark Mauve Dimming Overlay */
 .slide-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(35, 12, 60, 0.55); /* Darkened mauve tint to ensure high contrast */
+  background: rgba(35, 12, 60, 0.55);
   z-index: 1;
 }
 
-/* Overlay Text Content Container */
 .slide-content {
   position: absolute;
   z-index: 2;
@@ -210,7 +201,6 @@ nav a.nav-btn:hover {
   text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
-/* Slide Call to Action Button */
 .slide-btn {
   display: inline-block;
   padding: 0.75rem 1.8rem;
@@ -227,18 +217,17 @@ nav a.nav-btn:hover {
   transform: translateY(-2px);
 }
 
-/* Navigation Arrows (Previous / Next Buttons) */
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(138, 79, 255, 0.7); /* Semi-transparent mauve */
+  background: rgba(138, 79, 255, 0.7);
   color: var(--white);
   border: none;
   padding: 10px 15px;
   cursor: pointer;
   border-radius: 50%;
-  z-index: 3; /* Placed above text and overlay */
+  z-index: 3;
   transition: background 0.3s ease;
 }
 
@@ -268,7 +257,7 @@ nav a.nav-btn:hover {
   display: flex;
   gap: 2rem;
   justify-content: center;
-  flex-wrap: wrap; /* Ensures cards wrap cleanly on smaller mobile screens */
+  flex-wrap: wrap;
 }
 
 .pillar-card {
@@ -283,7 +272,7 @@ nav a.nav-btn:hover {
 }
 
 .pillar-card:hover {
-  transform: translateY(-5px); /* Gentle hover lift effect */
+  transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(138, 79, 255, 0.15);
 }
 
@@ -300,12 +289,183 @@ nav a.nav-btn:hover {
 }
 
 /* --------------------------------------------------------------------------
-   5. FOOTER STYLES
+   5. ABOUT PAGE STYLES
+   -------------------------------------------------------------------------- */
+
+/* 1. Our Story Layout */
+.about-story-section {
+  padding: 4.5rem 5%;
+  background-color: var(--white);
+}
+
+.story-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.story-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.sub-heading {
+  color: var(--mauve-dark);
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.story-text p {
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.story-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.story-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(138, 79, 255, 0.15);
+  object-fit: cover;
+  max-height: 380px;
+}
+
+/* 2. Impact Section */
+.impact-section {
+  padding: 3.5rem 5%;
+  background-color: var(--mauve-dark);
+  color: var(--white);
+  text-align: center;
+}
+
+.impact-section .section-title {
+  color: var(--white);
+}
+
+.impact-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.impact-card {
+  flex: 1;
+  min-width: 200px;
+  padding: 1.5rem;
+}
+
+.impact-number {
+  display: block;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--mauve-light);
+  margin-bottom: 0.3rem;
+}
+
+.impact-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* 3. Core Values Grid */
+.values-section {
+  padding: 4.5rem 5%;
+  background-color: var(--mauve-light);
+  text-align: center;
+}
+
+.values-grid {
+  display: flex;
+  gap: 1.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.value-card {
+  background-color: var(--white);
+  border-left: 4px solid var(--mauve);
+  border-radius: 8px;
+  padding: 1.8rem;
+  flex: 1;
+  min-width: 230px;
+  max-width: 260px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+}
+
+.value-card h3 {
+  color: var(--mauve-dark);
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.value-card p {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* 4. Mission & Vision Section */
+.mission-vision-section {
+  padding: 4.5rem 5%;
+  background-color: var(--white);
+}
+
+.mv-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.mv-card {
+  flex: 1;
+  min-width: 280px;
+  background-color: var(--mauve-light);
+  border: 1px solid var(--mauve);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.mv-card h2 {
+  color: var(--mauve-dark);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.mv-card p {
+  line-height: 1.6;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+/* --------------------------------------------------------------------------
+   6. FOOTER STYLES
    -------------------------------------------------------------------------- */
 footer {
   background-color: var(--mauve-dark);
   color: var(--white);
   text-align: center;
   padding: 1.5rem;
-  margin-top: 2rem;
 }

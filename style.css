@@ -10,9 +10,11 @@
   /* Color palette definitions */
   --mauve: #8a4fff;        /* Primary Accent */
   --mauve-light: #f3eefd;  /* Background tints & borders */
+  --mauve-soft: #f9f6fe;   /* Extra soft container background */
   --mauve-dark: #5e2ca5;   /* Text highlights & footer background */
   --white: #ffffff;       /* Main background */
-  --text: #222222;        /* Standard text color */
+  --text: #2c2c2c;        /* Soft dark text color */
+  --text-muted: #555555;  /* Muted text color */
 }
 
 /* Reset default browser margins and box sizing */
@@ -26,6 +28,7 @@
 body {
   background-color: var(--white);
   color: var(--text);
+  line-height: 1.6;
 }
 
 /* --------------------------------------------------------------------------
@@ -239,7 +242,7 @@ nav a.nav-btn:hover {
 .next { right: 15px; }
 
 /* --------------------------------------------------------------------------
-   4. CORE PILLARS STYLES
+   4. CORE PILLARS STYLES (HOME PAGE)
    -------------------------------------------------------------------------- */
 .pillars-section {
   padding: 4rem 5%;
@@ -289,173 +292,273 @@ nav a.nav-btn:hover {
 }
 
 /* --------------------------------------------------------------------------
-   5. ABOUT PAGE STYLES
+   5. REDESIGNED SOFT ABOUT PAGE STYLES
    -------------------------------------------------------------------------- */
 
-/* 1. Our Story Layout */
-.about-story-section {
-  padding: 4.5rem 5%;
+/* Hero Banner */
+.about-hero {
+  text-align: center;
+  padding: 4.5rem 5% 3.5rem;
+  background: linear-gradient(180deg, var(--mauve-light) 0%, var(--white) 100%);
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(138, 79, 255, 0.12);
+  color: var(--mauve-dark);
+  padding: 0.4rem 1.1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.about-hero h1 {
+  font-size: 2.4rem;
+  color: var(--mauve-dark);
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  line-height: 1.3;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Main Story Section */
+.story-section {
+  padding: 3rem 5% 4.5rem;
   background-color: var(--white);
 }
 
-.story-container {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  max-width: 1100px;
+.story-wrapper {
+  max-width: 900px;
   margin: 0 auto;
-  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
-.story-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.sub-heading {
-  color: var(--mauve-dark);
-  font-size: 2.2rem;
-  margin-bottom: 1.2rem;
-}
-
-.story-text p {
-  line-height: 1.7;
-  color: var(--text);
-  margin-bottom: 1.2rem;
-  font-size: 1.05rem;
-}
-
-.story-image {
-  flex: 1;
-  min-width: 300px;
-}
-
-.story-image img {
-  width: 100%;
+/* Founder Header Card */
+.founder-card {
+  background-color: var(--mauve-soft);
+  border: 1px solid var(--mauve-light);
+  border-left: 5px solid var(--mauve);
+  padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(138, 79, 255, 0.15);
-  object-fit: cover;
-  max-height: 380px;
 }
 
-/* 2. Impact Section */
-.impact-section {
-  padding: 3.5rem 5%;
+.founder-badge {
+  color: var(--mauve);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+}
+
+.founder-card h2 {
+  color: var(--mauve-dark);
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.founder-sub {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+/* Story Typography */
+.story-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.story-lead {
+  font-size: 1.2rem;
+  color: var(--mauve-dark);
+  line-height: 1.7;
+}
+
+.story-body p {
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* Story Callout Quote */
+.story-quote-box {
+  background-color: var(--mauve-light);
+  border-radius: 12px;
+  padding: 1.8rem 2.2rem;
+  margin: 0.8rem 0;
+}
+
+.story-quote-box p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--mauve-dark);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.story-closing {
+  font-size: 1.15rem;
+  color: var(--mauve-dark);
+  background-color: var(--mauve-soft);
+  padding: 1.2rem 1.6rem;
+  border-radius: 10px;
+  border: 1px dashed var(--mauve);
+}
+
+/* Impact Highlights */
+.impact-section-soft {
+  padding: 2.5rem 5%;
   background-color: var(--mauve-dark);
-  color: var(--white);
-  text-align: center;
 }
 
-.impact-section .section-title {
-  color: var(--white);
-}
-
-.impact-grid {
+.impact-container-soft {
   display: flex;
   gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 1000px;
+  max-width: 950px;
   margin: 0 auto;
 }
 
-.impact-card {
-  flex: 1;
-  min-width: 200px;
-  padding: 1.5rem;
+.impact-pill {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.8rem;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.impact-number {
-  display: block;
-  font-size: 2.8rem;
+.impact-num {
+  font-size: 1.8rem;
   font-weight: 800;
   color: var(--mauve-light);
-  margin-bottom: 0.3rem;
 }
 
-.impact-label {
-  font-size: 1rem;
-  opacity: 0.9;
+.impact-txt {
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
-/* 3. Core Values Grid */
-.values-section {
+/* Values Grid */
+.values-soft-section {
   padding: 4.5rem 5%;
-  background-color: var(--mauve-light);
+  background-color: var(--mauve-soft);
   text-align: center;
 }
 
-.values-grid {
+.section-title-soft {
+  color: var(--mauve-dark);
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.values-soft-grid {
   display: flex;
   gap: 1.8rem;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 1100px;
+  max-width: 1050px;
   margin: 0 auto;
 }
 
-.value-card {
+.val-card {
   background-color: var(--white);
-  border-left: 4px solid var(--mauve);
-  border-radius: 8px;
-  padding: 1.8rem;
+  border: 1px solid var(--mauve-light);
+  border-radius: 14px;
+  padding: 2rem 1.6rem;
   flex: 1;
-  min-width: 230px;
-  max-width: 260px;
+  min-width: 220px;
+  max-width: 245px;
   text-align: left;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+  box-shadow: 0 6px 18px rgba(138, 79, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.value-card:hover {
+.val-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(138, 79, 255, 0.12);
 }
 
-.value-card h3 {
+.val-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.val-card h3 {
   color: var(--mauve-dark);
   font-size: 1.2rem;
   margin-bottom: 0.6rem;
 }
 
-.value-card p {
-  font-size: 0.92rem;
-  line-height: 1.5;
-  color: var(--text);
+.val-card p {
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: var(--text-muted);
 }
 
-/* 4. Mission & Vision Section */
-.mission-vision-section {
+/* Mission & Vision Section */
+.mv-soft-section {
   padding: 4.5rem 5%;
   background-color: var(--white);
 }
 
-.mv-container {
+.mv-soft-grid {
   display: flex;
   gap: 2rem;
   justify-content: center;
-  max-width: 1000px;
+  max-width: 950px;
   margin: 0 auto;
   flex-wrap: wrap;
 }
 
-.mv-card {
+.mv-soft-card {
   flex: 1;
   min-width: 280px;
-  background-color: var(--mauve-light);
-  border: 1px solid var(--mauve);
-  border-radius: 12px;
+  background-color: var(--mauve-soft);
+  border: 1px solid var(--mauve-light);
+  border-radius: 16px;
   padding: 2.5rem 2rem;
-  text-align: center;
+  position: relative;
 }
 
-.mv-card h2 {
+.mv-soft-card.highlight-card {
+  background-color: var(--mauve-light);
+  border-color: var(--mauve);
+}
+
+.mv-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--mauve);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.6rem;
+}
+
+.mv-soft-card h2 {
   color: var(--mauve-dark);
   font-size: 1.6rem;
   margin-bottom: 1rem;
 }
 
-.mv-card p {
-  line-height: 1.6;
+.mv-soft-card p {
+  line-height: 1.7;
   font-size: 1rem;
   color: var(--text);
 }
